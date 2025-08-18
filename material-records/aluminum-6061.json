@@ -1,0 +1,11 @@
+{
+    "denomination": "EN AW-6061 (ISO AlMg1SiCu)",
+    "display_name": "Aluminum - 6061",
+    "type": "solid",
+    "density": 2.70,
+    "youngs_modulus": 69e9,
+    "poisson_ratio": 0.33,
+    "yield_strength": 240e6,
+    "ultimate_tensile_strength": 310e6,
+    "thermal_conductivity": 167
+}
