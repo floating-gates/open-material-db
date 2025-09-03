@@ -2,8 +2,6 @@
   <img src="/extras/header.webp" alt="OpenDB logo">
 </p>
 
-# Open Material DB
-
 Open Material DB is a lightweight SQLite-based database of engineering materials.
 It is designed to be simple, extensible, and easy to integrate with tools written in [C3](https://c3-lang.org).
 
