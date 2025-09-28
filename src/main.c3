@@ -4,6 +4,17 @@ extern fn int sqlite3_close(void*);
 
 import std::io;
 
+struct Material {
+  String denomination;
+  String display_name;
+  String type;
+  float density;
+  float young_modulus;
+  float poisson_ratio;
+  float yield_strength; 
+}
+
+
 fn int main() {
     void* db;
     int rc = sqlite3_open("test.db", &db);
@@ -13,11 +24,14 @@ fn int main() {
         return 0;
     }
 
-    String query = "CREATE TABLE IF NOT EXISTS materials(id INTEGER PRIMARY KEY AUTOINCREMENT,  denomination TEXT, display_name TEXT, type TEXT,   density REAL, youngs_modulus REAL, poisson_ratio REAL, yield_strength REAL, ultimate_tensile_strength REAL, thermal_conductivity REAL)";
+  String query = "CREATE TABLE IF NOT EXISTS materials(id INTEGER PRIMARY KEY AUTOINCREMENT,  denomination TEXT, display_name TEXT, type TEXT,   density REAL, youngs_modulus REAL, poisson_ratio REAL, yield_strength REAL, ultimate_tensile_strength REAL, thermal_conductivity REAL)";
 
   char* err = null;
   sqlite3_exec(db, query, null, null, &err);
 
+  // json_db_rep = parse_json_db()
+
+  
   io::print("Table created (if not already).\n");
 
   sqlite3_close(db);
