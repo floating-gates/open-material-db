@@ -1,5 +1,5 @@
 {
-    "denomination": "EN AW-6061 (ISO AlMg1SiCu)",
+    "testing_standards": "EN AW-6061 (ISO AlMg1SiCu)",
     "display_name": "Aluminum - 6061",
     "type": "solid",
     "density": 2.70,

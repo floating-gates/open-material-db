@@ -2,10 +2,8 @@
   <img src="/extras/header.webp" alt="OpenDB logo">
 </p>
 
-Open Material DB is a lightweight SQLite-based database of engineering materials.
-It is designed to be simple, extensible, and easy to integrate with tools written in [C3](https://c3-lang.org).
-
----
+Open Material DB is a minimal SQLite-based database of engineering materials.
+It is designed to be simple, extensible, and easy to integrate.
 
 ## Installation
 
@@ -25,18 +23,6 @@ Download the latest release from GitHub:
 [Open Material DB Releases](https://github.com/floating-gates/open-material-db/releases)
 
 This provides a `.db` SQLite3 database containing all available material records.
-
----
-
-## Building the Database
-
-To generate the database from material records, the [C3 compiler](https://c3-lang.org) must be installed on your system.
-
-```sh
-make
-```
-
-This will compile and assemble the SQLite database from the JSON material records.
 
 ---
 
@@ -63,18 +49,7 @@ To add a new material, create a JSON file under `material-records/`:
 After adding the file, regenerate the database:
 
 ```sh
-make
-```
-
----
-
-## Project Structure
-
-```
-extras/             # Documentation and assets
-material-records/   # JSON definitions for individual materials
-src/                # Source files for database generation
-Makefile            # Build rules
+./add_materials.sh
 ```
 
 ---
@@ -87,7 +62,19 @@ You can query the database with SQLite3:
 sqlite3 materials.db "SELECT * FROM materials WHERE type='solid';"
 ```
 
+or use a GUI like:  https://sqlitebrowser.org/
+
 ---
+
+## Project Structure
+
+```
+extras/             # Documentation and assets
+material-records/   # JSON definitions for individual materials
+src/                # Source files for database generation
+Makefile            # Build rules
+add_materials.sh    # Build and iterate through all JSON materials
+```
 
 ## License
 
